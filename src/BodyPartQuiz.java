@@ -31,6 +31,7 @@ public class BodyPartQuiz {
 	private void startQuiz() {
 
 		// 1. Make an int variable to hold the score.
+		int score=0;
 
 		// 2. Set the size of the window in the initializeGui() method below
 
