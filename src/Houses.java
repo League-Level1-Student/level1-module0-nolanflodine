@@ -5,10 +5,12 @@ import org.jointheleague.graphical.robot.Robot;
 public class Houses {
 	static Robot r= new Robot("june");	
 	static int height;
+	static String point;
 	static String color;
 public static void main(String[] args) { 
 height=Integer.parseInt(JOptionPane.showInputDialog("How tall do you want your house to be?"));
 color=JOptionPane.showInputDialog("What color do you want the house to be?");
+point=JOptionPane.showInputDialog("Do you want your houses to have points?");
 
 r.moveTo(50,600);
 r.setSpeed(50);
@@ -50,9 +52,17 @@ color();
 static void house () {
 
 	r.move(height);
+	if (point.equalsIgnoreCase("no")) {
 	r.turn(90);
 	r.move(50);
 	r.turn(90);
+	}else { 
+	r.turn(45);
+	r.move(25);
+	r.turn(90);
+	r.move(25);
+	r.turn(45);
+	}
 	r.move(height);
 	r.turn(-90);
 	r.move(5);
@@ -85,5 +95,8 @@ static void color() {
 		if (color.equalsIgnoreCase("white")) {
 		r.setPenColor(255,255,255);
 		}
+}
+static void pointyHouses() {
+
 }
 }

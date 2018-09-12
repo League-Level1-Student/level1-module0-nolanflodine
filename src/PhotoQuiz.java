@@ -18,13 +18,14 @@ public class PhotoQuiz {
 
 	public static void main(String[] args) throws Exception {
 		JFrame quizWindow = new JFrame();
-		quizWindow.setVisible(true);
+		String image=("https://www.gettyimages.ie/gi-resources/images/Homepage/Hero/UK/CMS_Creative_164657191_Kingfisher.jpg");
                 quizWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   // This will make sure the program exits when you close the window
 
 		// 1. find an image on the internet, and put its URL in a String variable (from your browser, right click on the image, and select “Copy Image Address”)
-
 		// 2. create a variable of type "Component" that will hold your image
-
+Component c=createImage(image);
+quizWindow.add(c);
+quizWindow.pack();
 		// 3. use the "createImage()" method below to initialize your Component
 
 		// 4. add the image to the quiz window
