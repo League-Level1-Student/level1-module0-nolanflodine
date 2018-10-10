@@ -20,6 +20,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class DrumKit implements MouseListener {
+	String Drum_a="Drum1.wav";
 
     JLabel drumLabelWithImage;
 
@@ -27,7 +28,7 @@ public class DrumKit implements MouseListener {
    	 new DrumKit().getGoing();
     }
 
-    private void getGoing() throws MalformedURLException {
+    public void getGoing() throws MalformedURLException  {
    	 // 1. Make a JFrame variable and initialize it using "new JFrame()"
  JFrame frame= new JFrame();  	 
    	 // 2. Make the frame visible and 
@@ -53,9 +54,10 @@ panel.add(drumLabelWithImage);
    	 // 11. Set the layout of the panel to "new GridLayout()"
 panel.setLayout(new GridLayout());    
       	 // 12. call the pack() method on the frame.  Run your program. Do you see your drum image?
+
 frame.pack();   	  
    	 // 13. add this mouse listener to drumLabelWithImage
-drumLabelWithImage.addMouseListener(l);    	
+drumLabelWithImage.addMouseListener(this);  
      	 // 18. Add more images to make a drumkit. Remember to add this mouse listener to each one.
 
     }
@@ -67,9 +69,9 @@ System.out.println("mouse clicked");
    	 
    	 // 15. Download a drum sound and drop it into your "default package". You can find it on freesound.org. To download it, log in as leagueofamazing/code4life.
    	 // 16. If they clicked on the drumImage...
-if 
    		 // 17. ...use the playSound method to play a drum sound. Test to see if it works
-
+//if (drumClicked.get)
+   	 playSound(Drum_a);
  
     }
 
@@ -88,8 +90,8 @@ if
 	}
 
 
-    private void playSound(String fileName) {
-   	 AudioClip sound = JApplet.newAudioClip(getClass().getResource(fileName));
+    private void playSound(String Drum_a) {
+   	 AudioClip sound = JApplet.newAudioClip(getClass().getResource(Drum_a));
    	 sound.play();
     }
 
