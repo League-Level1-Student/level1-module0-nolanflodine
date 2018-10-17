@@ -1,3 +1,4 @@
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URI;
 
@@ -5,21 +6,15 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class CutenessTV {
+public class CutenessTV implements ActionListener {
+    JButton button1 =new JButton();
+    JButton button2 =new JButton();
+    JButton button3 =new JButton();
+    JFrame frame = new JFrame();
+    JPanel panel= new JPanel();
 public static void main(String[] args) {
 CutenessTV cute= new CutenessTV();
 cute.showButton();
-JButton button1 =new JButton();
-JButton button2 =new JButton();
-JButton button3 =new JButton();
-JFrame frame = new JFrame();
-JPanel panel= new JPanel();
-frame.add(panel);
-panel.add(button1);
-panel.add(button2);
-panel.add(button3);
-frame.setVisible(true);
-frame.pack();
 }
 
 void showDucks() {
@@ -43,6 +38,32 @@ void playVideo(String videoID) {
      }
 }
 public void showButton() {
-    System.out.println("Button clicked");
+	System.out.println("Button clicked");
+	 button1.setText("Duck song");
+	 button2.setText("Frog");
+	 button3.setText("Fluffy Unicorns");
+	 frame.add(panel);
+	 panel.add(button1);
+	 panel.add(button2);
+	 panel.add(button3);
+    frame.setVisible(true);
+    frame.pack();
+    button1.addActionListener(this);
+    button2.addActionListener(this);
+    button3.addActionListener(this);   
+}
+
+
+@Override
+public void actionPerformed(ActionEvent e) {
+if (e.getSource()==button1) {
+showDucks();
+}
+if (e.getSource()==button2) {
+showFrog();
+}
+if (e.getSource()==button3) {
+showFluffyUnicorns();
+}
 }
 }
